@@ -31,24 +31,19 @@ This template provides the following suggested organizaiton structure for the pr
 
 # Team Iron Stress
 
-## Project Title and Introduction
+## Variability of iron stress in HNLC regions
 
-Provide a brief introduction describing the proposed work. Be sure to also decribe what skills team members will get to learn and practice as part of this project.
+This project will calculate a proxy for iron stress using BGC Argo float data in three regions of the Pacific (Subpolar North Pacific, equatorial Pacific, and Southern Ocean).  Using these estimates, we will examine how iron stress relates to physical and biogeochemical properties, such as mixed layer depth, oxygen, nitrate, and carbon parameters.
 
 ### Collaborators
 
-List all participants on the project. Here is a good space to share your personal goals for the hackweek and things you can help with.
+* Hayden 
+* Jannes
+* Ally
+* Alison
 
-| Name | Personal goals | Can help with | Role |
-| ------------- | ------------- | ------------- | ------------- |
-| Katherine J. | I want to learn specific python libraries for working with these data  | I can help with understanding our dataset, programming in R  | Project Lead |
-| Rosalind F. | Practice leading a software project | machine learning and python (scipy, scikit-learn) | Project Lead |
-| Alan T. | learning about your dataset | GitHub, Jupyter, cloud computing | Project Helper |
-| Rachel C. | learn to use github, resolve merge conflicts | I am familiar with our dataset | Team Member  |
-| ... | ... | ... | ... |
-| ... | ... | ... | ... |
 
-### The problem
+### Questions
 
 How does iron stress vary in different regions of the Pacific Ocean, specifically the Southern Ocean, the North Pacific, and the equatorial Pacific?  How does iron stress co-vary with oxygen, nitrate, and carbon?
 
@@ -56,7 +51,7 @@ How does iron stress vary in different regions of the Pacific Ocean, specificall
 
 ### Data
 
-BGC Argo profiles of fluorescence, irradiance, nitrate, oxygen.
+BGC Argo profiles of fluorescence, PAR, nitrate, oxygen, pH and derived carbon parameters 
 
 ### Existing methods
 
@@ -64,27 +59,22 @@ Methods to estimate iron stress are from [Ryan-Keogh and Thomalla, 2020](https:/
 
 ### Proposed methods/tools
 
-We will apply this method to BGC Argo profiles in new regions.
+We will apply this method to BGC Argo profiles in three previously unexamined regions.
 
 ### Additional resources or background reading
 
-Schallenberg, C., Strzepek, R. F., Bestley, S., Wojtasiewicz, B., & Trull, T. W. (2022). Iron limitation drives the globally extreme fluorescence/chlorophyll ratios of the Southern Ocean. Geophysical Research Letters, 49, e2021GL097616. (https://doi.org/10.1029/2021GL097616) 
+Schallenberg, C., Strzepek, R. F., Bestley, S., Wojtasiewicz, B., & Trull, T. W. 2022. Iron limitation drives the globally extreme fluorescence/chlorophyll ratios of the Southern Ocean. Geophysical Research Letters, 49, e2021GL097616. (https://doi.org/10.1029/2021GL097616) 
 
-Thomas J. Ryan-Keogh et al., Multidecadal trend of increasing iron stress in Southern Ocean phytoplankton.Science379,834-840(2023). (https://doi.org/10.1126/science.abl5237)
+Ryan-Keogh, T. J. et al., 2023. Multidecadal trend of increasing iron stress in Southern Ocean phytoplankton. Science, 379, 834-840. (https://doi.org/10.1126/science.abl5237)
 
 ## Project goals and tasks
 
 ### Project goals
 
-List the specific project goals or research questions you want to answer. Think about what outcomes or deliverables you'd like to create (e.g. a series of tutorial notebooks demonstrating how to work with a dataset, results of an anaysis to answer a science question, an example of applying a new analysis method, or a new python package).
-
-* Goal 1
-* Goal 2
-* ...
+* Apply methods from Schallenberg et al. 2022 to float data from the Pacific 
+* Assess the resulting estimates of iron stress in relation to physical and biogeochemical properties.
 
 ### Tasks
-
-What are the individual tasks or steps that need to be taken to achieve each of the project goals identified above? What are the skills that participants will need or will learn and practice to complete each of these tasks? Think about which tasks are dependent on prior tasks, or which tasks can be performed in parallel.
 
 * Calculate alpha_NPQ
   * Write one function to calculate MLD (Hayden)
@@ -93,13 +83,14 @@ What are the individual tasks or steps that need to be taken to achieve each of 
   * Calculate NPQ from difference between non-quenched Fl and measured Fl / non-quenched Fl
 * Regress NPQ with PAR to get alpha_NPQ
   * Write function to compute Equation 3
-  <img width="253" height="46" alt="image" src="https://github.com/user-attachments/assets/f4de18bd-4f68-4844-a623-ce2ae67b63f0" />
+   <img width="253" height="46" alt="image" src="https://github.com/user-attachments/assets/f4de18bd-4f68-4844-a623-ce2ae67b63f0" /> (Alison)
 
 * Compare alpha_NPQ to oxygen, nitrate, DIC, etc 
   
 
 ## Project Results
 
-Use this section to briefly summarize your project results. This could take the form of describing the progress your team made to answering a research question, developing a tool or tutorial, interesting things found in exploring a new dataset, lessons learned for applying a new method, personal accomplishments of each team member, or anything else the team wants to share.
+<!-- Use this section to briefly summarize your project results. This could take the form of describing the progress your team made to answering a research question, developing a tool or tutorial, interesting things found in exploring a new dataset, lessons learned for applying a new method, personal accomplishments of each team member, or anything else the team wants to share.
 
 You could include figures or images here, links to notebooks or code elsewhere in the repository (such as in the [notebooks](notebooks/) folder), and information on how others can run your notebooks or code.
+-->
