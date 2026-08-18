@@ -87,12 +87,14 @@ List the specific project goals or research questions you want to answer. Think 
 What are the individual tasks or steps that need to be taken to achieve each of the project goals identified above? What are the skills that participants will need or will learn and practice to complete each of these tasks? Think about which tasks are dependent on prior tasks, or which tasks can be performed in parallel.
 
 * Calculate alpha_NPQ
-  * Calculate MLD
-  * Calculate PAR_15 (depth where PAR = 15)
-  * Load unadjusted Fl data
-  * Calculate non-quenched fluorescence at shallower of MLD or PAR_15
+  * Write one function to calculate MLD (Hayden)
+  * Write one function to calculate PAR_15, depth where PAR = 15 (Ally)
+  * Write one function to load unadjusted Fl data and find non-quenched fluorescence (F_m; value at shallower of MLD and PAR_15) (Jannes)
   * Calculate NPQ from difference between non-quenched Fl and measured Fl / non-quenched Fl
 * Regress NPQ with PAR to get alpha_NPQ
+  * Write function to compute Equation 3
+  <img width="253" height="46" alt="image" src="https://github.com/user-attachments/assets/f4de18bd-4f68-4844-a623-ce2ae67b63f0" />
+
 * Compare alpha_NPQ to oxygen, nitrate, DIC, etc 
   
 
