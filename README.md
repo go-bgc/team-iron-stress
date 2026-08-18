@@ -1,4 +1,4 @@
-# Sample Project
+<!-- # Sample Project
 
 This is an example of how teams can structure their project repositories and format their project README.md file.
 
@@ -27,8 +27,9 @@ This template provides the following suggested organizaiton structure for the pr
 # Recommended content for your README.md file:
 
 (you can remove the content here and above from your final project README.md file so that it begins with the Project or Team Name title below)
+-->
 
-# Project or Team Name
+# Team Iron Stress
 
 ## Project Title and Introduction
 
@@ -49,27 +50,27 @@ List all participants on the project. Here is a good space to share your persona
 
 ### The problem
 
-Provide a few sentences describing the problem are you going to explore. If this is a technical exploration of software or data science methods, explain why this work is important in a broader context and specific applications of this work.
+How does iron stress vary in different regions of the Pacific Ocean, specifically the Southern Ocean, the North Pacific, and the equatorial Pacific?  How does iron stress co-vary with oxygen, nitrate, and carbon?
 
 ## Data and Methods
 
 ### Data
 
-Briefly describe and provide citations for the data that will be used (size, format, how to access).
+BGC Argo profiles of fluorescence, irradiance, nitrate, oxygen.
 
 ### Existing methods
 
-How would you or others traditionally try to address this problem? Provide any relevant citations to prior work.
+Methods to estimate iron stress are from [Ryan-Keogh and Thomalla, 2020](https://doi.org/10.3389/fmars.2020.00275).
 
 ### Proposed methods/tools
 
-What new approaches would you like to implement for addressing your specific question(s) or application(s)?
-
-Will your project use machine learning methods? If so, we invite you to create a [model card](model-card.md)!
+We will apply this method to BGC Argo profiles in new regions.
 
 ### Additional resources or background reading
 
-Optional: links to manuscripts or technical documents providing background information, context, or other relevant information.
+Schallenberg, C., Strzepek, R. F., Bestley, S., Wojtasiewicz, B., & Trull, T. W. (2022). Iron limitation drives the globally extreme fluorescence/chlorophyll ratios of the Southern Ocean. Geophysical Research Letters, 49, e2021GL097616. (https://doi.org/10.1029/2021GL097616) 
+
+Thomas J. Ryan-Keogh et al., Multidecadal trend of increasing iron stress in Southern Ocean phytoplankton.Science379,834-840(2023). (https://doi.org/10.1126/science.abl5237)
 
 ## Project goals and tasks
 
@@ -85,11 +86,9 @@ List the specific project goals or research questions you want to answer. Think 
 
 What are the individual tasks or steps that need to be taken to achieve each of the project goals identified above? What are the skills that participants will need or will learn and practice to complete each of these tasks? Think about which tasks are dependent on prior tasks, or which tasks can be performed in parallel.
 
-* Task 1 (all team members will learn to use GitHub)
-* Task 2 (team members will use the scikit-learn python library)
-  * Task 2a (assigned to team member A)
-  * Task 2b (assigned to team member B)
-* Task 3
+* Calculate non-photochemical quenching
+* Regress NPQ with PAR to get alpha_NPQ
+* Compare alpha_NPQ to oxygen, nitrate, DIC, etc 
 * ...
 
 ## Project Results
