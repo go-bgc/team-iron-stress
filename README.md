@@ -86,9 +86,10 @@ List the specific project goals or research questions you want to answer. Think 
 
 What are the individual tasks or steps that need to be taken to achieve each of the project goals identified above? What are the skills that participants will need or will learn and practice to complete each of these tasks? Think about which tasks are dependent on prior tasks, or which tasks can be performed in parallel.
 
-* Calculate non-photochemical quenching
+* Calculate alpha_NPQ
   * Calculate MLD
   * Calculate PAR_15 (depth where PAR = 15)
+  * Load unadjusted Fl data
   * Calculate non-quenched fluorescence at shallower of MLD or PAR_15
   * Calculate NPQ from difference between non-quenched Fl and measured Fl / non-quenched Fl
 * Regress NPQ with PAR to get alpha_NPQ
