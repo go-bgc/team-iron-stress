@@ -13,7 +13,7 @@ def fit_alpha_npq(prof_data):
     return param_opt
 
 def npq_func(PAR, NPQ_max, alpha_NPQ):
-    return NPQ_max * (1 - np.exp(-(PAR * alpha_NPQ)/NPQ_max)
+    return NPQ_max * (1 - np.exp(-(PAR * alpha_NPQ)/NPQ_max))
 
                       
     
