@@ -1,6 +1,15 @@
 import numpy as np
 import xarray as xr
 
+
+def calculate_NPQ_depth(ds0): 
+    ds = ds0.copy()
+    ml09 = ds['ml_depth']*.9
+    npq_depth = (ml09).where(ml09 < ds['par_depth'], ds['par_depth'])
+
+    ds = ds.assign({'NPQ_depth': npq_depth})
+    return ds
+
 def calculate_NPQ_fluo(ds0, z_thr = 45):    
     # Calculate NPQ corrected fluorescence following Schallenberg et al. 2022 by setting values
     # to a constant above a threshold depth z_thr (default value 45m). Returns the 17-point smoothed
@@ -19,12 +28,4 @@ def calculate_NPQ_fluo(ds0, z_thr = 45):
 
     ds = ds.assign({'fluo_smooth': fluo_smooth, 'fluo_npqc': fluo_npqc})
     
-    return ds
-
-def calculate_NPQ_depth(ds0): 
-    ds = ds0.copy()
-    ml09 = ds['ml_depth']*.9
-    npq_depth = (ml09).where(ml09 < ds['par_depth'], ds['par_depth'])
-
-    ds = ds.assign({'NPQ_depth': npq_depth})
     return ds
