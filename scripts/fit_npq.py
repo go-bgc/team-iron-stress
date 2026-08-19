@@ -16,6 +16,10 @@ def fit_alpha_npq(ds):
     # select only data where par > 0
     npq = npq.where(par > 0)
 
+    # Further constraints on the fits 
+    # 1. prescribing reasonable maximum bounds for aNPQ and NPQmax (0.1 and 20, respectively)
+    # 2. manipulating PAR to yield a zero intercept between NPQ and PAR. This was achieved by subtracting the PAR value where NPQ first reached a low threshold, in this case 0.1.
+    
     # fit NPQ_max and alpha_NPQ from PAR and NPQ data
     param_opt, pcov = curve_fit(NPQ_func, par, npq)
     # NPQ_max = param_opt[0]
