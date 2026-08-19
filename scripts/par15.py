@@ -1,3 +1,5 @@
+import numpy as np
+
 # code to find par = 15 
 def par15(ds):
     
