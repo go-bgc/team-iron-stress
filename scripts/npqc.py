@@ -3,6 +3,7 @@ import xarray as xr
 
 
 def calculate_NPQ_depth(ds0): 
+    # Calculate NPQ depth as the lower of .9*MLD and PAR depth
     ds = ds0.copy()
     ml09 = ds['ml_depth']*.9
     npq_depth = (ml09).where(ml09 < ds['par_depth'], ds['par_depth'])
