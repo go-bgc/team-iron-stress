@@ -10,15 +10,7 @@ def fit_alpha_npq(ds0, npq_thr=0.1):
     npq = (ds['fluo_npqc']-ds['fluo_smooth'])/ds['fluo_smooth']
     ds['npq'] = npq
 
-    #max_cloud_elev = cloud.c.where(cloud > 0.6).max(dim="c")
-    
-    # select only data where above npq depth
-    #npq = npq.where(ds['PRES_ADJUSTED'] < ds['NPQ_depth'],drop=True)
-    #par = ds['DOWNWELLING_PAR'].where(ds['PRES_ADJUSTED'] < ds['NPQ_depth'],drop=True)
-    
     # Constraint 2: subtract the PAR value where NPQ first reached a low threshold, in this case 0.1.
-    #par_idx = par.where(npq < npq_tshld).argmin()
-    #par = par - par(par_idx)
     par_thr = ds['DOWNWELLING_PAR'].where(npq < npq_thr).min(dim="N_LEVELS")
     ds['par'] = ds['DOWNWELLING_PAR']-par_thr
 
