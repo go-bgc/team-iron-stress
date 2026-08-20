@@ -8,6 +8,7 @@ def fit_alpha_npq(ds0, npq_thr=0.01):
 
     # calculate npq as difference between fluo_npq and fluo_smooth
     npq = (ds['fluo_npqc']-ds['fluo_smooth'])/ds['fluo_smooth']
+    npq = npq.where(~np.isinf(npq),np.nan)
     ds['npq'] = npq
 
     # Constraint 2: subtract the PAR value where NPQ first reached a low threshold, in this case 0.1.
