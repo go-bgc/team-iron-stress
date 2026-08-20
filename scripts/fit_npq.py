@@ -33,8 +33,8 @@ def fit_alpha_npq(ds0, npq_thr=0.01):
         bounds={"NPQ_max": (0, 20), "alpha_NPQ": (0, 0.1)},
     )
 
-    ds['NPQ_max'] = ds_param.sel(param='NPQ_max').curvefit_coefficients.values
-    ds['alpha_NPQ'] = ds_param.sel(param='alpha_NPQ').curvefit_coefficients.values
+    ds['NPQ_max'] = ds_param.sel(param='NPQ_max').curvefit_coefficients
+    ds['alpha_NPQ'] = ds_param.sel(param='alpha_NPQ').curvefit_coefficients
     
     return ds
 
