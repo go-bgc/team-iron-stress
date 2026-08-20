@@ -1,4 +1,6 @@
 import numpy as np
+import gsw
+import xarray as xr
 
 #calculate MLD for profiles
 def mld_calc(floatdata):
@@ -16,4 +18,6 @@ def mld_calc(floatdata):
             if densdiff>0.03:
                 MLD[i]=prof.isel(N_LEVELS=g).PRES
                 break
-    return(MLD)
+    ds = floatdata.copy()
+    ds = ds.assign({'ml_depth': xr.DataArray(MLD, coords={'N_PROF': ds['N_PROF']})})
+    return(ds)

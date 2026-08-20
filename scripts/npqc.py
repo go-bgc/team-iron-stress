@@ -23,7 +23,7 @@ def calculate_NPQ_fluo(ds0, *, z_thr = 45):
         ds['NPQ_depth'] = xr.DataArray(np.full(ds['N_PROF'].shape, z_thr), coords={'N_PROF': ds['N_PROF']})
         
     # Find closest value to z_thr for each profile
-    ix_z = (np.abs(ds['PRES_ADJUSTED']-z_thr)).argmin(dim='N_LEVELS')
+    ix_z = (np.abs(ds['PRES_ADJUSTED']-ds['NPQ_depth'])).argmin(dim='N_LEVELS')
     
     fluo_smooth = ds['CHLA_FLUORESCENCE'].rolling(N_LEVELS=17, center=True, min_periods=1).median()
     fluo_npqc = fluo_smooth.where(ds['PRES_ADJUSTED'] > ds['NPQ_depth'], fluo_smooth.isel(N_LEVELS=ix_z))
