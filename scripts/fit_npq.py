@@ -12,9 +12,9 @@ def fit_alpha_npq(ds0, npq_thr=0.01):
     ds['npq'] = npq
 
     # Constraint 2: subtract the PAR value where NPQ first reached a low threshold, in this case 0.1.
-    par_thr = ds['PRES_ADJUSTED'].where((ds['npq'] < npq_thr) & ~xr.ufuncs.isnan(ds['DOWNWELLING_PAR'])).argmin(dim="N_LEVELS")
+    par_thr = ds['PRES_ADJUSTED'].where((ds['npq'] < npq_thr) & ~xr.ufuncs.isnan(ds['DOWNWELLING_PAR'])).dropna(dim='N_PROF', how='all').argmin(dim="N_LEVELS")
     #par_adj = ds['DOWNWELLING_PAR']-par_thr
-    
+    ds = ds.sel(N_PROF=par_thr['N_PROF'])
     #par_thr = ds['DOWNWELLING_PAR'].where(npq < npq_thr).min(dim="N_LEVELS")
     #ds['par'] = ds['DOWNWELLING_PAR']-par_thr
 
